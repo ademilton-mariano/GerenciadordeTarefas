@@ -1,16 +1,18 @@
 ﻿using GerenciadorTarefas.Data;
 using GerenciadorTarefas.Models;
 using GerenciadorTarefas.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace GerenciadorTarefas.Controllers;
 
+[Authorize]
 [ApiController]
 public class TarefaController : ControllerBase
 {
     [HttpGet("usuarios/{idUsuario:int}/tarefas")]
-    public IActionResult Get([FromServices] DataContext context,[FromRoute] int idUsuario )
+    public IActionResult ListarTarefas([FromServices] DataContext context,[FromRoute] int idUsuario )
     {
         try
         {
@@ -24,7 +26,7 @@ public class TarefaController : ControllerBase
     }
 
     [HttpGet("usuarios/{idUsuario:int}/tarefas/{id:int}")]
-    public IActionResult GetById([FromServices] DataContext context, [FromRoute] int id)
+    public IActionResult ListarUmaTarefa([FromServices] DataContext context, [FromRoute] int id)
     {
         try
         {
@@ -42,7 +44,7 @@ public class TarefaController : ControllerBase
     }
 
     [HttpPost("usuarios/{idUsuario:int}/tarefas")]
-    public IActionResult Post([FromBody] CadastroTarefaViewModel model,
+    public IActionResult CadastrarTarefa([FromBody] CadastroTarefaViewModel model,
         [FromRoute] int idUsuario, 
         [FromServices] DataContext context)
     {
@@ -71,7 +73,7 @@ public class TarefaController : ControllerBase
     }
 
     [HttpPut("usuarios/{idUsuario:int}/tarefas/{id:int}")]
-    public IActionResult Put([FromBody] CadastroTarefaViewModel model,
+    public IActionResult EditarTarefa([FromBody] CadastroTarefaViewModel model,
         [FromRoute] int id, 
         [FromRoute] int idUsuario,
         [FromServices] DataContext context)
@@ -99,7 +101,7 @@ public class TarefaController : ControllerBase
     }
     
     [HttpDelete("usuarios/{idUsuario:int}/tarefas/{id:int}")]
-    public IActionResult Delete([FromRoute] int id,[FromRoute] int idUsuario, [FromServices] DataContext context)
+    public IActionResult ApagarTarefa([FromRoute] int id,[FromRoute] int idUsuario, [FromServices] DataContext context)
     {
         try
         {

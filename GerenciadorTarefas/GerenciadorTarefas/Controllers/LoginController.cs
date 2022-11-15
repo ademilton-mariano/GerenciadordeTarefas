@@ -11,7 +11,7 @@ namespace GerenciadorTarefas.Controllers;
 public class LoginController : ControllerBase
 {
     [HttpPost("login")]
-    public IActionResult Login([FromBody] LoginViewModel model, 
+    public IActionResult Logar([FromBody] LoginViewModel model, 
         [FromServices] DataContext context,
         [FromServices] TokenService tokenService)
     {
