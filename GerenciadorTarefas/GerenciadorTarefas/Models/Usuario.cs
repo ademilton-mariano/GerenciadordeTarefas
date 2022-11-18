@@ -14,11 +14,20 @@ public class Usuario
     public string? Bio { get; private set; }
     public virtual IList<Tarefa>? Tarefas { get; private set; }
 
-    public void CadastrarOuEditarUsuario(CadastroUsuarioViewModel model)
+    public void CadastrarUsuario(CadastroUsuarioViewModel model)
     {
         Nome = model.Nome;
         Email = model.Email.ToLower();
         Senha = PasswordHasher.Hash(model.Senha);
+        Idade = model.Idade;
+        Endereco = model.Endereco;
+        Bio = model.Bio;
+    }
+    
+    public void EditarUsuario(EditarUsuarioViewModel model)
+    {
+        Nome = model.Nome;
+        Email = model.Email.ToLower();
         Idade = model.Idade;
         Endereco = model.Endereco;
         Bio = model.Bio;

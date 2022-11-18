@@ -23,6 +23,7 @@ builder.Services.AddAuthentication(x =>
     };
 });
 
+builder.Services.AddCors();
 builder.Services.AddControllers();
 builder.Services.AddDbContext<DataContext>();
 builder.Services.AddEndpointsApiExplorer();
@@ -36,6 +37,14 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseCors(c =>
+{
+    c.AllowAnyHeader();
+    c.AllowAnyMethod();
+    c.AllowAnyOrigin();
+});
+
 
 app.UseHttpsRedirection();
 app.UseAuthentication();

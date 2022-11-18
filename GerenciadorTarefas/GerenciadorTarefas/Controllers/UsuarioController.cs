@@ -38,7 +38,7 @@ public class UsuarioController : ControllerBase
         try
         {
             var xUsuario = new Usuario();
-            xUsuario.CadastrarOuEditarUsuario(model);
+            xUsuario.CadastrarUsuario(model);
             context.Usuarios.Add(xUsuario);
             context.SaveChanges();
             return Created($"usuarios/{xUsuario.Id}", "Criado com Sucesso");
@@ -54,7 +54,7 @@ public class UsuarioController : ControllerBase
     }
 
     [HttpPut("usuarios/{id:int}")]
-    public IActionResult EditarUsuario([FromBody] CadastroUsuarioViewModel model,
+    public IActionResult EditarUsuario([FromBody] EditarUsuarioViewModel model,
         [FromRoute] int id,
         [FromServices] DataContext context)
     {
@@ -65,7 +65,7 @@ public class UsuarioController : ControllerBase
             if (xUsuario == null)
                 return BadRequest("Conteúdo não encontrado");
             
-            xUsuario.CadastrarOuEditarUsuario(model);
+            xUsuario.EditarUsuario(model);
             context.Usuarios.Update(xUsuario);
             context.SaveChanges();
             return Ok("Editado com sucesso");
