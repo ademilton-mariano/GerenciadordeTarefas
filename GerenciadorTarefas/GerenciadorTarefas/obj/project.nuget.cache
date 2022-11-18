@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "HQC0LI+Ou0ZR2j3FAOfEGtIqlpExS36XpEHeY7mvwy8pDxufYwST6Z9epJce/Nh4CQ00B4dVSDYIhhxJmm+YbQ==",
+  "dgSpecHash": "ZSYR7ZvbOu3EpUtbqM6JFufEYRJeScRYj2nPn/4ecg+fro0smglg5Ey6+wRRVNmkOguDtrauNtNLdJizlXvTGA==",
   "success": true,
-  "projectFilePath": "C:\\POO\\GerenciadorTarefas1\\GerenciadorTarefas\\GerenciadorTarefas\\GerenciadorTarefas.csproj",
+  "projectFilePath": "C:\\POO\\GerenciadorTarefas\\GerenciadorTarefas\\GerenciadorTarefas.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\admil\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
     "C:\\Users\\admil\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",

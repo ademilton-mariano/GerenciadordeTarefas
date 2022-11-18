@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\POO\\GerenciadorTarefas1\\GerenciadorTarefas\\GerenciadorTarefas\\GerenciadorTarefas.csproj": {}
+    "C:\\POO\\GerenciadorTarefas\\GerenciadorTarefas\\GerenciadorTarefas.csproj": {}
   },
   "projects": {
-    "C:\\POO\\GerenciadorTarefas1\\GerenciadorTarefas\\GerenciadorTarefas\\GerenciadorTarefas.csproj": {
+    "C:\\POO\\GerenciadorTarefas\\GerenciadorTarefas\\GerenciadorTarefas.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\POO\\GerenciadorTarefas1\\GerenciadorTarefas\\GerenciadorTarefas\\GerenciadorTarefas.csproj",
+        "projectUniqueName": "C:\\POO\\GerenciadorTarefas\\GerenciadorTarefas\\GerenciadorTarefas.csproj",
         "projectName": "GerenciadorTarefas",
-        "projectPath": "C:\\POO\\GerenciadorTarefas1\\GerenciadorTarefas\\GerenciadorTarefas\\GerenciadorTarefas.csproj",
+        "projectPath": "C:\\POO\\GerenciadorTarefas\\GerenciadorTarefas\\GerenciadorTarefas.csproj",
         "packagesPath": "C:\\Users\\admil\\.nuget\\packages\\",
-        "outputPath": "C:\\POO\\GerenciadorTarefas1\\GerenciadorTarefas\\GerenciadorTarefas\\obj\\",
+        "outputPath": "C:\\POO\\GerenciadorTarefas\\GerenciadorTarefas\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
