@@ -14,10 +14,6 @@ public class TokenService
         var key = Encoding.ASCII.GetBytes(Configuracao.JwtKey);
         var tokenDescriptor = new SecurityTokenDescriptor
         {
-            Subject = new ClaimsIdentity(new Claim[]
-            {
-                new (ClaimTypes.Name, usuario.Email)
-            }),
             Expires = DateTime.UtcNow.AddHours(8),
             SigningCredentials = new SigningCredentials(
                 new SymmetricSecurityKey(key),

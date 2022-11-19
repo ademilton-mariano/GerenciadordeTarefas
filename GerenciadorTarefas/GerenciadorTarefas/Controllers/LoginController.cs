@@ -11,7 +11,7 @@ namespace GerenciadorTarefas.Controllers;
 public class LoginController : ControllerBase
 {
     [HttpPost("login")]
-    public IActionResult Logar([FromBody] LoginViewModel model, 
+    public ActionResult<dynamic> Logar([FromBody] LoginViewModel model, 
         [FromServices] DataContext context,
         [FromServices] TokenService tokenService)
     {
@@ -20,17 +20,26 @@ public class LoginController : ControllerBase
 
         try
         {
-            var usuario =  context.Usuarios.AsNoTracking()
+            var xUsuario =  context.Usuarios.AsNoTracking()
                 .FirstOrDefault(x => x.Email == model.Email.ToLower());
 
-            if (usuario == null)
+            if (xUsuario == null)
                 return StatusCode(401, "Usuário ou senha inválido");
 
-            if (!PasswordHasher.Verify(usuario.Senha, model.Senha))
+            if (!PasswordHasher.Verify(xUsuario.Senha, model.Senha))
                 return StatusCode(401,"Usuário ou senha inválido");
 
-            var token = tokenService.GenerateToken(usuario);
-            return Ok(token);
+            var token = tokenService.GenerateToken(xUsuario);
+            return new
+            {
+                Id = xUsuario.Id,
+                Nome = xUsuario.Nome,
+                Email = xUsuario.Email,
+                Idade = xUsuario.Idade,
+                Endereco = xUsuario.Endereco,
+                Bio = xUsuario.Bio,
+                Token = token
+            };
         }
         catch
         {
